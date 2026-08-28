@@ -15,7 +15,7 @@ from app.main import get_human_age
         pytest.param(28, 28, [3, 2], id="check_that_28, 28_years_age_is_2"),
         pytest.param(100, 100, [21, 17], id="years_calculation_after_24"),
         pytest.param(-24, -24, [0, 0], id="check_negative_int"),
-        pytest.param("24", "24", [0, 0], id="check_not_int"),
+        pytest.param("24", "24", pytest.raises(TypeError), id="check_not_int"),
     ]
 )
 def test_check_correct_calculating(
